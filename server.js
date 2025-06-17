@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+// Enable trust proxy to get real IP address when hosted
+app.set('trust proxy', true);
+
 app.get('/', (req, res) => {
   res.send('Request Header Parser Microservice');
 });
