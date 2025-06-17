@@ -1,11 +1,10 @@
 const express = require('express');
 const app = express();
 
-// Enable trust proxy to get real IP address when hosted
-app.set('trust proxy', true);
+app.set('trust proxy', true); // Required to get real IP address
 
 app.get('/', (req, res) => {
-  res.send('Request Header Parser Microservice');
+  res.send('Header Parser Microservice is live');
 });
 
 app.get('/api/whoami', (req, res) => {
@@ -18,5 +17,5 @@ app.get('/api/whoami', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`App is running on port ${PORT}`);
+  console.log(`App listening on port ${PORT}`);
 });
